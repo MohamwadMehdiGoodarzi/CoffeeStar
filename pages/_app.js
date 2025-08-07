@@ -4,7 +4,8 @@ import Image from 'next/image';
 export default function App({ Component, pageProps }) {
   return (
 
-      <div dir="rtl" className="dark">
+      <div dir="rtl">
+
         
         <nav className="relative bg-white shadow dark:bg-gray-800">
             <div className="container px-6 py-4 mx-auto md:flex md:justify-between md:items-center">
