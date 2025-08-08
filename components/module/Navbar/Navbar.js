@@ -1,10 +1,10 @@
 import React from 'react'
 import Link from 'next/link';
 
-function Header() {
+function Navbar() {
   return (
-    <div>
-      <nav className="relative bg-white shadow dark:bg-gray-800">
+
+    <nav className="relative bg-white shadow dark:bg-gray-800">
           <div className="container px-6 py-4 mx-auto md:flex md:justify-between md:items-center">
           
           <div className="flex gap-6">
@@ -42,9 +42,9 @@ function Header() {
           </div>
 
           </div>
-      </nav>
-    </div>
+    </nav>
+
   )
 }
 
-export default Header;
+export default Navbar;
