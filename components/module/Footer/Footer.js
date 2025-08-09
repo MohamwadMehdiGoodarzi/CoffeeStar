@@ -50,7 +50,7 @@ function Footer() {
                   </div>
 
                   <div>
-                      <p className="font-semibold text-2xl text-gray-800 dark:text-white">آدزس فروشگاه</p>
+                      <p className="font-semibold text-2xl text-gray-800 dark:text-white">آدرس فروشگاه</p>
                       <div className="flex flex-col items-start mt-5 space-y-2">
                           <p className="text-gray-600 transition-colors  dark:text-gray-300 ">تهران، سهروردی شمالی، نرسیده به خیابان بهشتی، خیابان میرزای زینالی غربی، پلاک 101، طبقه اول، واحد 3</p>
                       </div>

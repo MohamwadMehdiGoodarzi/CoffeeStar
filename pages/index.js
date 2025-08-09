@@ -1,28 +1,32 @@
-import React from 'react'
-import Slider from '../components/template/Index/Slider'
-import About from '../components/template/Index/About'
-import Services from '../components/template/Index/Services'
+import React from "react";
+import Slider from "../components/template/Index/Slider";
+import About from "../components/template/Index/About";
+import Services from "../components/template/Index/Services";
 
-
-function index() {
-
+function index({ data }) {
   return (
-
     <>
-
-
       <Slider />
 
       <About />
 
-      <Services />
-
+      <Services services={data.services}/>
     </>
-
-  )
-
+  );
 }
 
+export async function getStaticProps() {
+  const res = await fetch("http://localhost:4000/services");
+  const services = await res.json();
 
+  return {
+    props: {
+      data: {
+        services,
+      },
+    },
+    revalidate: 60 * 60 * 12,
+  };
+}
 
-export default index
+export default index;

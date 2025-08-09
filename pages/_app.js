@@ -1,4 +1,5 @@
 import Navbar from "../components/module/Navbar/Navbar";
+import Footer from "../components/module/Footer/Footer";
 import "../styles/globals.css";
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import { config } from '@fortawesome/fontawesome-svg-core'
@@ -12,6 +13,7 @@ export default function App({ Component, pageProps }) {
 
 
         <Navbar />
+
 
         <Component {...pageProps} />
 
@@ -74,7 +76,7 @@ export default function App({ Component, pageProps }) {
             </section> 
         */}
 
-
+        <Footer />
 
 
     </div>
