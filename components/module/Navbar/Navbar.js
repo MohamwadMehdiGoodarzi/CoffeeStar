@@ -1,5 +1,10 @@
 import React, { useState } from "react";
 import Link from "next/link";
+import ThemeToggle from "../ThemeToggle";
+
+
+
+
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -64,15 +69,24 @@ function Navbar() {
           </button>
 
           <div className=" flex items-center gap-x-4">
-            <a className="relative text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-300" href="#" >
+            <ThemeToggle />   
+            {/* <button className="relative size-12 flex items-center justify-center text-gray-700 transition-colors duration-300 transform cursor-pointer dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-300" >
+
+            </button> */}
+
+            <button className="relative size-12 flex items-center justify-center text-gray-700 transition-colors duration-300 transform cursor-pointer dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-300" >
               <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" >
                 <path d="M3 3H5L5.4 5M7 13H17L21 5H5.4M7 13L5.4 5M7 13L4.70711 15.2929C4.07714 15.9229 4.52331 17 5.41421 17H17M17 17C15.8954 17 15 17.8954 15 19C15 20.1046 15.8954 21 17 21C18.1046 21 19 20.1046 19 19C19 17.8954 18.1046 17 17 17ZM9 19C9 20.1046 8.10457 21 7 21C5.89543 21 5 20.1046 5 19C5 17.8954 5.89543 17 7 17C8.10457 17 9 17.8954 9 19Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /> 
               </svg>
-            </a>
-            <a className="relativetransition-colors duration-300 transform bg-sky-600 flex items-center gap-x-5 text-white rounded-xl justify-between py-1.5 px-6 dark:text-gray-200 hover:bg-blue-600 dark:hover:text-gray-300" href="#" >
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-user-round-plus-icon lucide-user-round-plus"><path d="M2 21a8 8 0 0 1 13.292-6"/><circle cx="10" cy="8" r="5"/><path d="M19 16v6"/><path d="M22 19h-6"/></svg>
-              ثبت نام
-            </a>
+            </button>
+
+            <button className="relative transition-colors duration-300 transform cursor-pointer bg-blue-600 w-44 h-12 flex items-center justify-between px-5 gap-x-4 text-white text-base rounded-xl  dark:text-gray-200 hover:bg-blue-500 dark:hover:text-gray-300" >
+              <svg className="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+              </svg>
+               ورود / عضویت
+            </button>
+
           </div>
 
         </div>

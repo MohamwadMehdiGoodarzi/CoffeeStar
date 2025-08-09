@@ -26,7 +26,7 @@
 }
 
 
-
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
   --font-DanaRegular: 'Dana-Regular', sans-serif;
