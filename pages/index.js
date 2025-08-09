@@ -2,6 +2,7 @@ import React from "react";
 import Slider from "../components/template/Index/Slider";
 import About from "../components/template/Index/About";
 import Services from "../components/template/Index/Services";
+import Offer from "../components/template/Index/Offer";
 
 function index({ data }) {
   return (
@@ -11,6 +12,8 @@ function index({ data }) {
       <About />
 
       <Services services={data.services}/>
+
+      <Offer />
     </>
   );
 }

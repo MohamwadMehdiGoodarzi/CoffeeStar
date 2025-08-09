@@ -9,7 +9,7 @@ function Footer() {
               <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 sm:gap-y-10 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-6">
 
                   <div className="sm:col-span-2">
-                      <p className="font-semibold text-2xl mb-5 text-gray-800 dark:text-white">درباره ما</p>
+                      <p className="font-DanaMedium text-2xl mb-5 text-gray-800 dark:text-white">درباره ما</p>
                       <p className="max-w-lg text-base tracking-tight text-gray-800 dark:text-gray-300">مجموعه‌ی به کافی به مدیریت مهندس علی رهنما ار سال 1395 شروع به فعالیت کرده است. در ابتدا، این مجموعه با نام قهوه‌ی بلوت و در خیابان انقلاب تهران، راه اندازی شد.با هدف افزایش کیفیت و کاهش قیمت، در بهار سال 97 تولیدی قهوه به کافی نیز راه اندازی گردید و پس از آن بنا به تشخیص هیات مدیره، نام فروشگاه بلوت، به فروشگاه به کافی تغییر یافت.</p>
                       <p className="text-gray-700 text-sm mt-7">جهت اطلاع از تخفیف ها ایمیل خود را وارد نمایید </p>
 
@@ -22,7 +22,7 @@ function Footer() {
                   </div>
 
                   <div>
-                      <p className="font-semibold text-2xl text-gray-800 dark:text-white">ساعت کاری</p>
+                      <p className="font-DanaMedium text-2xl text-gray-800 dark:text-white">ساعت کاری</p>
                       <div className="flex flex-col items-start mt-5 space-y-2">
                           <p className="text-gray-600 transition-colors duration-300 dark:text-gray-300">شنبه تا پنج شنبه</p>
                           <p className="text-gray-600 transition-colors duration-300 dark:text-gray-300">7:30 تا 22:00</p>
@@ -32,7 +32,7 @@ function Footer() {
                   </div>
 
                   <div>
-                      <p className="font-semibold text-2xl text-gray-800 dark:text-white">پشتیبانی</p>
+                      <p className="font-DanaMedium text-2xl text-gray-800 dark:text-white">پشتیبانی</p>
                       <div className="flex flex-col items-start mt-5 space-y-2">
                           <p className="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 cursor-pointer hover:text-blue-500">HengamCoffeeSupport</p>
                           <p className="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 cursor-pointer hover:text-blue-500"> تماس : ۰۲۱۴۴۰۸۱۸۹۸</p>
@@ -41,7 +41,7 @@ function Footer() {
                   </div>
 
                   <div>
-                      <p className="font-semibold text-2xl text-gray-800 dark:text-white">دسترسی سریع</p>
+                      <p className="font-DanaMedium text-2xl text-gray-800 dark:text-white">دسترسی سریع</p>
                       <div className="flex flex-col items-start mt-5 space-y-2">
                           <p className="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 cursor-pointer hover:text-blue-500">ثبت شکایات</p>
                           <p className="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 cursor-pointer hover:text-blue-500">حفظ حریم شخصی</p>
@@ -50,7 +50,7 @@ function Footer() {
                   </div>
 
                   <div>
-                      <p className="font-semibold text-2xl text-gray-800 dark:text-white">آدرس فروشگاه</p>
+                      <p className="font-DanaMedium text-2xl text-gray-800 dark:text-white">آدرس فروشگاه</p>
                       <div className="flex flex-col items-start mt-5 space-y-2">
                           <p className="text-gray-600 transition-colors  dark:text-gray-300 ">تهران، سهروردی شمالی، نرسیده به خیابان بهشتی، خیابان میرزای زینالی غربی، پلاک 101، طبقه اول، واحد 3</p>
                       </div>
@@ -66,7 +66,7 @@ function Footer() {
                   </a>
 
                   <div>
-                    <p className="text-gray-700 text-base">تمامی حقوق این وب‌سایت متعلق به قهوه آرام می‌باشد.</p>
+                    <p className="text-gray-700 font-DanaMedium text-base">تمامی حقوق این وب‌سایت متعلق به قهوه آرام می‌باشد.</p>
                   </div>
                   
                   <div className="flex -mx-2">
