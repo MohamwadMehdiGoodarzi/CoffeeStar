@@ -10,8 +10,8 @@ function Footer() {
 
                   <div className="sm:col-span-2">
                       <p className="font-DanaMedium text-2xl mb-5 text-gray-800 dark:text-white">درباره ما</p>
-                      <p className="max-w-lg text-base tracking-tight text-gray-800 dark:text-gray-300">مجموعه‌ی به کافی به مدیریت مهندس علی رهنما ار سال 1395 شروع به فعالیت کرده است. در ابتدا، این مجموعه با نام قهوه‌ی بلوت و در خیابان انقلاب تهران، راه اندازی شد.با هدف افزایش کیفیت و کاهش قیمت، در بهار سال 97 تولیدی قهوه به کافی نیز راه اندازی گردید و پس از آن بنا به تشخیص هیات مدیره، نام فروشگاه بلوت، به فروشگاه به کافی تغییر یافت.</p>
-                      <p className="text-gray-700 text-sm mt-7">جهت اطلاع از تخفیف ها ایمیل خود را وارد نمایید </p>
+                      <p className="max-w-lg text-base tracking-tight text-gray-600 dark:text-gray-300">مجموعه‌ی به کافی به مدیریت مهندس علی رهنما ار سال 1395 شروع به فعالیت کرده است. در ابتدا، این مجموعه با نام قهوه‌ی بلوت و در خیابان انقلاب تهران، راه اندازی شد.با هدف افزایش کیفیت و کاهش قیمت، در بهار سال 97 تولیدی قهوه به کافی نیز راه اندازی گردید و پس از آن بنا به تشخیص هیات مدیره، نام فروشگاه بلوت، به فروشگاه به کافی تغییر یافت.</p>
+                      <p className="text-gray-700 dark:text-gray-300 text-sm mt-7">جهت اطلاع از تخفیف ها ایمیل خود را وارد نمایید </p>
 
                       <div className="flex flex-col mx-auto mt-4 space-y-3 md:space-y-0 md:flex-row">
                           <input id="email" type="text" className="px-4 py-2 text-gray-700 bg-white border rounded-md dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-blue-300" placeholder="ایمیل خود را وارد نمایید .." />
@@ -66,7 +66,7 @@ function Footer() {
                   </a>
 
                   <div>
-                    <p className="text-gray-700 font-DanaMedium text-base">تمامی حقوق این وب‌سایت متعلق به قهوه آرام می‌باشد.</p>
+                    <p className="text-gray-700 dark:text-gray-300 font-DanaMedium text-base">تمامی حقوق این وب‌سایت متعلق به قهوه آرام می‌باشد.</p>
                   </div>
                   
                   <div className="flex -mx-2">

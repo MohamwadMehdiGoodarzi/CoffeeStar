@@ -1,100 +1,193 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import ThemeToggle from "../ThemeToggle";
-
-
-
-
+import Image from "next/image";
+import { Bars3Icon, XMarkIcon, ShoppingCartIcon, UserIcon } from "@heroicons/react/24/outline";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const menuRef = useRef(null);
+
+  // بستن منو وقتی کلیک بیرون شد
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (
+        isOpen &&
+        menuRef.current &&
+        !menuRef.current.contains(event.target)
+      ) {
+        setIsOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isOpen]);
 
   return (
-    <nav className="relative bg-white shadow dark:bg-gray-800">
-      <div className="container px-6 py-4 mx-auto md:flex md:justify-between md:items-center">
-
-        <div className="flex items-center">
-          <a href="#">
-            <img className="w-auto h-6 sm:h-7" src="https://merakiui.com/images/full-logo.svg" alt="لوگو" />
-          </a>
-          <div className={`absolute bg-gray-100 inset-x-0 z-20 w-1/2 px-6 py-10 h-dvh md:h-auto mt-4 md:mt-0 transition-all duration-300 ease-in-out dark:bg-gray-800 md:relative md:bg-transparent md:w-auto md:p-0 md:flex md:items-center ${ isOpen ? "translate-x-0 opacity-100" : "opacity-0 translate-x-0 md:opacity-100 md:translate-x-0" }`} >
-            <div className="flex flex-col md:flex-row md:mx-6">
-              <a className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0" href="#" onClick={() => setIsOpen(false)} > صفحه اصلی </a>
-              <a className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0" href="#" onClick={() => setIsOpen(false)} > فروشگاه </a>
-              <a className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0" href="#" onClick={() => setIsOpen(false)} > خدمات </a>
-              <a className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0" href="#" onClick={() => setIsOpen(false)} > تماس با ما </a>
-              <Link href="/" className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0" onClick={() => setIsOpen(false)} > درباره ما</Link>
-            </div>
-          </div>
-        </div>
-
-        <div className="flex justify-between items-center w-full md:w-auto gap-6">
-          
+    <>
+      <nav className="bg-white shadow dark:bg-gray-800 relative z-50">
+        <div className="container mx-auto px-6 py-1.5 md:py-4 flex items-center justify-between">
+          {/* دکمه همبرگری فقط زیر 1024 */}
           <button
-            className="md:hidden text-gray-700 dark:text-gray-200 focus:outline-none"
             onClick={() => setIsOpen(!isOpen)}
+            className="lg:hidden text-gray-700 dark:text-gray-200"
             aria-label="Toggle menu"
           >
             {isOpen ? (
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
+              <XMarkIcon className="w-6 h-6" />
             ) : (
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
+              <Bars3Icon className="w-6 h-6" />
             )}
           </button>
 
-          <div className=" flex items-center gap-x-4">
-            <ThemeToggle />   
-            {/* <button className="relative size-12 flex items-center justify-center text-gray-700 transition-colors duration-300 transform cursor-pointer dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-300" >
+          {/* لوگو وسط */}
+          <Link href="/" className="mx-auto lg:mx-0">
+            <Image
+              src="/images/coffeelog.png"
+              alt="لوگو"
+              width={60}
+              height={60}
+            />
+          </Link>
 
-            </button> */}
+          {/* آیکون سبد خرید در موبایل */}
+          <button
+            className="lg:hidden relative flex items-center justify-center text-gray-700 dark:text-gray-200"
+            aria-label="سبد خرید"
+          >
+            <ShoppingCartIcon className="w-6 h-6" />
+          </button>
 
-            <button className="relative size-12 flex items-center justify-center text-gray-700 transition-colors duration-300 transform cursor-pointer dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-300" >
-              <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" >
-                <path d="M3 3H5L5.4 5M7 13H17L21 5H5.4M7 13L5.4 5M7 13L4.70711 15.2929C4.07714 15.9229 4.52331 17 5.41421 17H17M17 17C15.8954 17 15 17.8954 15 19C15 20.1046 15.8954 21 17 21C18.1046 21 19 20.1046 19 19C19 17.8954 18.1046 17 17 17ZM9 19C9 20.1046 8.10457 21 7 21C5.89543 21 5 20.1046 5 19C5 17.8954 5.89543 17 7 17C8.10457 17 9 17.8954 9 19Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /> 
-              </svg>
-            </button>
-
-            <button className="relative transition-colors duration-300 transform cursor-pointer bg-blue-600 w-44 h-12 flex items-center justify-between px-5 gap-x-4 text-white text-base rounded-xl  dark:text-gray-200 hover:bg-blue-500 dark:hover:text-gray-300" >
-              <svg className="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
-              </svg>
-               ورود / عضویت
-            </button>
-
+          {/* بالای 1024: منو اصلی */}
+          <div className="hidden lg:flex lg:items-center lg:space-x-8 mr-auto">
+            <Link
+              href="/"
+              className="text-gray-700 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400"
+            >
+              صفحه اصلی
+            </Link>
+            <Link
+              href="#"
+              className="text-gray-700 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400"
+            >
+              فروشگاه
+            </Link>
+            <Link
+              href="#"
+              className="text-gray-700 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400"
+            >
+              خدمات
+            </Link>
+            <Link
+              href="#"
+              className="text-gray-700 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400"
+            >
+              تماس با ما
+            </Link>
+            <Link
+              href="/"
+              className="text-gray-700 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400"
+            >
+              درباره ما
+            </Link>
           </div>
 
+          {/* بالای 1024: سبد خرید + تم + ورود */}
+          <div className="hidden lg:flex lg:items-center lg:space-x-6">
+            <button
+              className="relative flex items-center justify-center text-gray-700 dark:text-gray-200"
+              aria-label="سبد خرید"
+            >
+              <ShoppingCartIcon className="w-6 h-6" />
+            </button>
+
+            <ThemeToggle />
+
+            <button className="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2 rounded-xl flex items-center gap-2">
+              ورود / عضویت
+              <UserIcon className="w-5 h-5" />
+            </button>
+          </div>
         </div>
 
+        {/* منوی همبرگری موبایل */}
+        <div
+          ref={menuRef}
+          className={`fixed top-0 right-0 h-full w-3/4 max-w-64 inset-shadow-sm inset-shadow-blue-500 bg-gray-100 dark:bg-gray-800 p-6 transition-transform duration-300 z-50 lg:hidden ${
+            isOpen ? "translate-x-0" : "translate-x-full"
+          }`}
+          style={{ direction: "rtl" }}
+          onClick={(e) => e.stopPropagation()}
+        >
+          {/* دکمه بستن */}
+          <button
+            onClick={() => setIsOpen(false)}
+            className="mb-6 text-gray-700 dark:text-gray-200 focus:outline-none"
+            aria-label="Close menu"
+          >
+            <XMarkIcon className="w-6 h-6" />
+          </button>
 
+          {/* دکمه ورود + تم */}
+          <div className="flex items-center justify-between gap-4 mb-8">
+            <button className="flex items-center justify-between w-full bg-blue-600 hover:bg-blue-500 text-white px-4 py-3 rounded-xl">
+              ورود و ثبت نام
+              <UserIcon className="w-5 h-5" />
+            </button>
+            <ThemeToggle />
+          </div>
 
-      </div>
-    </nav>
+          {/* لینک‌های منو */}
+          <nav className="flex flex-col gap-4 text-gray-700 dark:text-gray-200">
+            <Link
+              href="/"
+              onClick={() => setIsOpen(false)}
+              className="hover:text-blue-500"
+            >
+              صفحه اصلی
+            </Link>
+            <Link
+              href="#"
+              onClick={() => setIsOpen(false)}
+              className="hover:text-blue-500"
+            >
+              فروشگاه
+            </Link>
+            <Link
+              href="#"
+              onClick={() => setIsOpen(false)}
+              className="hover:text-blue-500"
+            >
+              خدمات
+            </Link>
+            <Link
+              href="#"
+              onClick={() => setIsOpen(false)}
+              className="hover:text-blue-500"
+            >
+              تماس با ما
+            </Link>
+            <Link
+              href="/"
+              onClick={() => setIsOpen(false)}
+              className="hover:text-blue-500"
+            >
+              درباره ما
+            </Link>
+          </nav>
+        </div>
+      </nav>
+
+      {/* Overlay وقتی منو باز است */}
+      {isOpen && (
+        <div
+          onClick={() => setIsOpen(false)}
+          className="fixed inset-0 bg-black/10 bg-opacity-50 backdrop-blur-xs z-40 lg:hidden"
+        ></div>
+      )}
+    </>
   );
 }
 
