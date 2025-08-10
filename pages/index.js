@@ -18,10 +18,11 @@ function index({ data }) {
   );
 }
 
+
+
 export async function getStaticProps() {
   const res = await fetch("http://localhost:4000/services");
   const services = await res.json();
-
   return {
     props: {
       data: {

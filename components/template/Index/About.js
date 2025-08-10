@@ -9,9 +9,13 @@ function About() {
          
       <section className="bg-white dark:bg-gray-900">
           <div className="container px-6 py-10 mx-auto">
-              <div className="text-center">
+              {/* <div className="text-center">
                   <p className="text-2xl font-DanaDemiBold text-gray-800 capitalize lg:text-4xl dark:text-white">درباره بِه کافی</p>
                   <p className="max-w-lg text-lg mx-auto mt-4 line-clamp-2 text-gray-500">مجموعه‌ی به کافی به مدیریت مهندس علی رهنما ار سال 1395 شروع به فعالیت کرده است. در ابتدا، این مجموعه با نام قهوه‌ی بلوت و در خیابان انقلاب تهران، راه اندازی شد.</p>
+              </div> */}
+
+              <div className='lg:mt-20 lg:mb-10'>
+                <Image src="/images/title/product.png" width={600} height={60}/>
               </div>
 
               <div className="grid grid-cols-1 gap-8 mt-8 lg:grid-cols-2">

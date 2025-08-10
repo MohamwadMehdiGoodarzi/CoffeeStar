@@ -4,7 +4,7 @@ import Image from "next/image";
 function Slider() {
   return (
     <section className="bg-white dark:bg-gray-900">
-      <div className="lg:container mx-auto lg:px-6">
+      <div className="lg:container mx-auto lg:px-4">
         {/* تصویر موبایل - فقط نمایش در صفحه‌های کوچک */}
         <Image
           className="block md:hidden w-full h-auto mx-auto object-contain"
